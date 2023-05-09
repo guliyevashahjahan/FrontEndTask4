@@ -1,0 +1,9 @@
+:root{
+    --red-500: #ff2020;
+}
+.container{
+    width: 60%;
+    height: 100%;
+    margin: 0px auto;
+    
+}

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+    
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* ------------HEADER--------------*/
+
+header{
+    background-color: white;
+    padding: 32px;
+}
+.head-inner{
+    width: 85%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .head-inner .navbar ul{
+    display: flex;
+    column-gap: 28px;
+    font-weight: 600;
+}
+header .header-right{
+    display: flex;
+    column-gap: 40px;
+}
+header .header-right .icons{
+    display: flex;
+    column-gap: 24px;
+}
+header .header-right .hamburger{
+    display: none;
+}
+header .header-right .icons a:hover,
+header .head-inner .navbar ul li:hover{
+    color: var(--red-500);
+}
+
+/* --------------END OF HEADER----------*/
+
+/*---------------BANNER---------------*/
+
+#banner{
+    height: 100vh;
+    background-color: #f0f0f2;;
+}
+.banner-row{
+    display: flex;
+    align-items: center;
+}
+.banner-row img{
+    height: 100%;
+}
+.banner-text h1{
+    font-size: 96px;
+    color: #0b1c39;
+}
+.banner-text p{
+    font-size: 17px;
+    color: #212529;
+    margin: 50px 0px;
+    line-height: 130%;
+}
