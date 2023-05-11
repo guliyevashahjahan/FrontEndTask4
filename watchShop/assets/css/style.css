@@ -9,19 +9,63 @@ body{
 
 header{
     background-color: white;
-    padding: 32px;
 }
-.head-inner{
+header .head-inner{
     width: 85%;
     margin: 0px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-header .head-inner .navbar ul{
+header .navbar {
     display: flex;
-    column-gap: 28px;
+}
+header .navbar a{
     font-weight: 600;
+}
+
+header .navbar > li {
+    position: relative;
+    padding: 32px 16px;
+}
+header .navbar .status{
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 8px;
+    background-color: #ff003c;
+    font-size: 10px;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    top: 10px;
+}
+header .navbar .dropdown{
+    visibility: hidden;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px;
+    row-gap: 12px;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: white;
+    border-top: 3px solid  var(--red-500);
+    border-radius: 5px 5px 4px 4px;
+    opacity: 0;
+    transition: 0.2s;
+}
+header .navbar .sub-li:hover .dropdown{
+visibility: visible;
+opacity: 1;
+}
+header .navbar .dropdown::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: var(--red-500);
+    transform: translateY(calc(-100% - 2px))
 }
 header .header-right{
     display: flex;
@@ -35,7 +79,7 @@ header .header-right .hamburger{
     display: none;
 }
 header .header-right .icons a:hover,
-header .head-inner .navbar ul li:hover{
+header .navbar a:hover{
     color: var(--red-500);
 }
 
