@@ -92,17 +92,22 @@ header .navbar a:hover{
 /*---------------BANNER---------------*/
 
 #banner{
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh + 424px);
     background-color: #f0f0f2;;
 }
 .banner-row{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .banner-row img{
-    height: 100%;
+    position: absolute;
+    width: 365px;
+    right: 0px;
 }
 .banner-text h1{
+    white-space: nowrap;
     font-size: 96px;
     color: #0b1c39;
 }
@@ -112,19 +117,93 @@ header .navbar a:hover{
     margin: 50px 0px;
     line-height: 130%;
 }
+
+/*---------------END OF BANNER-------------------*/
+
+
+/*---------------NEW ARRIVALS--------------------*/
+.new-arrivals{
+    width: 100%;
+    height: calc(100vh + 424px);
+    background-color: white;
+    padding: 200px 0px;
+}
+.new-arrivals h2{
+    font-size: 48px;
+}
+.articles {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.text {
+    text-align: center;
+}
+.articles h3 {
+    font-size: 24px;
+    color: #444444;
+    padding: 35px 0px 20px;
+    text-align: center;
+
+}
+.articles p {
+    display: inline-block;
+    color: #ff003c;
+    text-align: center;
+    font-weight: 500;
+}
+.pictures {
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+}
+.img1 {
+    width: 616px;
+    height: 690px;
+}
+.img2 {
+    box-sizing: border-box;
+width: 390px;
+height: 690px;
+padding: 0px 30px;
+}
+.img3,
+.img4 {
+    width: 100%;
+    height: 330px;
+}
+.pictures-left{
+    display: flex;
+}
+.pictures-right{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
 @media screen and (max-width: 1200px) {
+    .banner-text h1 {
+        font-size: 60px;
+    }
     header{
         padding: 20px 0px;
         position: relative;
     }
+    header .head-inner {
+        width: 90%;
+    }
 header nav{
+    display: none;
     width: 95%;
     position: absolute;
     top: 100%;
     background-color: white;
     left: 30px;
 padding: 16px 20px;
+z-index: 100;
 
+}
+header nav.visible {
+   display: block; 
 }
 header .navbar{
     flex-direction: column;
@@ -164,6 +243,25 @@ header .header-right .hamburger {
     color: var(--red-500);
 }
 }
-    @media screen and (max-width: 576px) {
-        
+@media screen and (max-width:700px) {
+    #banner {
+        width: 100%;
     }
+    .banner-text h1 {
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:576px) {
+    #banner {
+        min-height: 30vh;
+    }
+    header .header-right .icons {
+        transform: translateY(70px) translateX(70px);
+    }
+    .banner-row img {
+        display: none;
+    }
+    .banner-text h1 {
+        font-size: 33px;
+    }
+}
