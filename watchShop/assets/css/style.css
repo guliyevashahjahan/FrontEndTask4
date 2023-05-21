@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
 body{
-    
+    background-color: #f8f9fa;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -104,6 +104,7 @@ header .navbar a:hover{
 .banner-row img{
     position: absolute;
     width: 365px;
+    height: 100%;
     right: 0px;
 }
 .banner-text h1{
@@ -136,6 +137,19 @@ header .navbar a:hover{
     justify-content: space-between;
     padding-top: 50px;
 }
+.new-arrivals-img {
+    overflow: hidden;
+}
+.new-arrivals-item:hover img{
+transform: scale(1.05);
+transition: 1s linear;
+
+}
+.new-arrivals-item {
+    transform: scale(1);
+    transition: 1s linear;
+}
+
 .text {
     text-align: center;
 }
@@ -152,10 +166,38 @@ header .navbar a:hover{
     text-align: center;
     font-weight: 500;
 }
-.pictures {
+.gallery {
     width: 100%;
-    background-color: #f8f9fa;
+    position: relative;
     display: flex;
+}
+.gallery img {
+    transform: scale(1);
+    transition: 1s;
+    position: relative;
+}
+.gallery img::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(1,10,28,0.3);
+    visibility: visible;
+    z-index: 5;
+}
+.images {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.images:hover img {
+    transform: scale(0.9);
+}
+.images:hover::before {
+    visibility: visible;
 }
 .img1 {
     width: 616px;
@@ -172,14 +214,216 @@ padding: 0px 30px;
     width: 100%;
     height: 330px;
 }
-.pictures-left{
+.gallery-left{
     display: flex;
 }
-.pictures-right{
+.gallery-right{
     display: flex;
     flex-direction: column;
     row-gap: 30px;
 }
+.section-header {
+    width: 100%;
+    text-align: center;
+    padding-top: 250px;
+
+}
+.section-header h2 {
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+}
+.section-header p{
+    font-family: "Roboto",sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+.articles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 50px;
+}
+.image {
+    position: relative;
+}
+.image i {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 36px;
+    visibility: hidden;
+    opacity: 0.5;
+    transition: 1s opacity;
+}
+.cart {
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    background-color: #ff003c;
+    width: 98%;
+    text-align: center;
+    height: 5px;
+    transition: 1s;
+}
+.cart p {
+    visibility: hidden;
+    padding-top: 20px;
+}
+.articles article:hover .cart{
+    height: 60px;
+}
+.articles article:hover .image i {
+    visibility: visible;
+    opacity: 1;
+}
+.articles article:hover .cart p {
+    visibility: visible;
+    color: white;
+    text-align: center;
+}
+.articles article {
+    width: calc(100% / 3 - 10px);
+}
+.articles article h3 a {
+    color: #444444;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.articles article span {
+    color: #444444;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+}
+.popular-items-btn {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video {
+    position: relative;
+}
+.video .background {
+    width: 100%;
+    height: 100vh;
+}
+.background::after {
+    height: 100%;
+    width: 100%;
+    background-color:rgba(1,10,28,0.3);
+    visibility: visible;
+    z-index: 5;
+}
+.video .next-video {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.next-video span {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+.next-video a {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    top: 48%;
+    left: 70%;
+}
+.video .play {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: white;
+    font-size: 80px;
+    transition: 1s;
+}
+.play:hover {
+    font-size: 90px;
+    color: #ff003c;
+}
+.watch-of-choice {
+    display: flex;
+    padding-top: 200px;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 150px;
+}
+.watch-of-choice h2 {
+    color: #000;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 40px;
+
+}
+.watch-of-choice p {
+    font-family: "Roboto",sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+.footer-top {
+background-color: #ff2020;
+display: flex;
+justify-content: space-between;
+margin-top: 200px;
+padding: 100px 50px;
+align-items: center;
+}
+.footer-top p {
+    color: #d3d1d1;
+    font-family: "Roboto",sans-serif;
+    
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+.footer-top i{
+    font-size: 40px;
+    color: #ffff;
+    margin-bottom: 25px;
+    display: block;
+}
+.footer-top h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    font-family: "Roboto",sans-serif;
+}
+.footer-top article {
+    width: calc (100% / 3 - 10px);
+    height: 100px;
+    color: white;
+}
+
+
+
+
+
+
+
 @media screen and (max-width: 1200px) {
     .banner-text h1 {
         font-size: 60px;
